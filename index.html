@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Gradient Generator</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.main{
+			height: 100vh;
+			width:100vw;
+			background: linear-gradient(to left , #FB9FE9, #81BCFF );
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.main .btn{
+			width: 200px;
+			font-size: 30px;
+			border-radius: 30px;
+			padding: 10px;
+			border:none;
+			outline: none;
+			background:linear-gradient(to left , #81BCFF , #FB9FE9);
+			filter: drop-shadow(5px 5px 5px #888);
+			transition: all 0.2s;
+		}
+		.main .btn:hover{
+			background:linear-gradient(to right , #81BCFF , #FB9FE9);
+			filter: drop-shadow(2px 2px 2px #888);
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="main">
+		<button class="btn" id="btn">Click Me!</button>
+	</div>
+
+
+	<script>
+		const btn = document.querySelector('#btn');
+		btn.addEventListener("click",function(){
+			let color = ['orange','skyblue','lightgreen','#C48DEE','#FB9FE9' , '#81BCFF'];
+			let random = Math.floor(Math.random() * 6);
+			let random2 = Math.floor(Math.random() * 6);
+
+			let body = document.querySelector('.main');
+			body.style.background = `linear-gradient(to left ,${color[random]} , ${color[random2]} )`;
+		});
+	</script>
+	
+</body>
+</html>
